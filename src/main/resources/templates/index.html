@@ -3,14 +3,14 @@
 <head th:replace="~{fragments/header :: header}"></head>
     <body>
         <!-- Navigation--><!-- Page Header-->
-        <nav th:replace="~{fragments/bodyheader :: bodyheader}"></nav>
+        <nav th:replace="~{fragments/navbar :: navbar}"></nav>
         <header class="masthead" style="background-image: url('assets/img/home-bg.jpg')">
             <div class="container position-relative px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
                         <div class="site-heading">
                             <h1>B-SIDE</h1>
-                            <span class="subheading">앨범 뒷면의 숨겨진 명곡처럼, 인디뮤지션을 위한 공간</span>
+                            <span class="subheading" style="font-size: 15px">앨범 뒷면의 숨겨진 명곡처럼, 인디뮤지션을 위한 공간</span>
                         </div>
                     </div>
                 </div>
@@ -35,6 +35,37 @@
                 </div>
             </div>
         </div>
+
+        <strong class="d-inline-block m-5 text-success-emphasis">> 공연정보</strong>
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner" data-bs-interval="25000">
+                <div th:each="chunk, chunkStat : ${imageChunks}" class="carousel-item" th:classappend="${chunkStat.index == 0} ? ' active'">
+                    <div class="d-flex justify-content-center">
+                        <!-- 실제 이미지 -->
+                        <div th:each="image : ${chunk}" class="px-1" style="width: 20%;">
+                            <img th:src="@{/assets/img/performence/} + ${image}" class="img-fluid rounded" alt="..." style="object-fit: cover; width: 100%; height: 100%;">                        </div>
+
+                        <!-- 빈 칸 (회색 배경) -->
+                        <div th:if="${#lists.size(chunk) < 5}"
+                             th:each="i : ${#numbers.sequence(1, 5 - #lists.size(chunk))}"
+                             class="px-1" style="width: 20%;">
+                            <div class="w-100 h-100 rounded bg-light" style="min-height: 100px;"></div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!--앞뒤버튼-->
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
         <!-- Footer-->
         <div th:replace="~{fragments/footer :: footer}" />
         <!-- Bootstrap core JS-->
