@@ -106,5 +106,61 @@
         .bd-mode-toggle .dropdown-menu .active .bi {
           display: block !important;
         }
+
+    <!mypage css-->
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body, html {
+      height: 100%;
+      font-family: 'Arial', sans-serif;
+      background-color: #f0f2f5;
+    }
+    .mypage-container {
+      display: flex;
+      height: 100vh; /* 한 화면을 꽉 채움 */
+    }
+    .profile-section {
+      background-color: #fff;
+      width: 30%;
+      padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border-right: 1px solid #ddd;
+    }
+    .profile-section img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 20px;
+    }
+    .profile-section h2 {
+      font-size: 26px;
+      margin-bottom: 10px;
+    }
+    .profile-section p {
+      font-size: 16px;
+      color: #777;
+    }
+    .content-section {
+      flex-grow: 1;
+      background-color: #fafafa;
+      padding: 60px;
+      overflow-y: auto;
+    }
+    .content-section h3 {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+    .content-section p {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #333;
+    }
     </style>
 </head>

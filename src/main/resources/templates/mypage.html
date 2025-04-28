@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/header :: header}"></head>
+<body>
+<nav th:replace="~{fragments/navbar :: navbar}"></nav>
+<div class="mypage-container">
+  <div class="profile-section">
+    <img src="https://via.placeholder.com/150" alt="프로필 사진">
+    <h2>홍길동</h2>
+    <p>@honggildong</p>
+  </div>
+  <div class="content-section">
+    <h3>내 소개</h3>
+    <p>
+      안녕하세요! 여행과 사진을 사랑하는 홍길동입니다.<br>
+      최근에는 다양한 사람들과 소통하고, 글을 쓰는 것에도 관심을 갖고 있어요.<br><br>
+      이 페이지는 저만의 공간입니다. 앞으로 더 많은 이야기들을 이곳에 담아가고 싶어요. :)
+    </p>
+  </div>
+</div>
+
+</body>
+</html>

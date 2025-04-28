@@ -41,4 +41,9 @@ public class BSideController {
     public String signin() {
         return "signin";
     }
+
+    @GetMapping("/mypage")
+    public String mypage() {
+        return "mypage";
+    }
 }
