@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/header :: header}"></head>
+<body class="bg-white text-dark" style="padding-top: 80px;">
+<nav th:replace="~{fragments/navbar :: navbar}"></nav>
+
+<div class="container mt-5">
+  <div class="card border rounded">
+    <div class="card-body">
+      <h3 class="card-title">첫 번째 게시글 제목</h3>
+      <h6 class="card-subtitle mb-2">작성자: 홍길동 | 2025-04-28</h6>
+      <hr>
+      <p class="card-text">이곳은 게시글의 본문 내용이 들어갑니다. 여러 줄로 작성된 내용도 잘 보입니다.</p>
+      <div class="mt-4 d-flex justify-content-end">
+        <a href="/board" class="btn btn-outline-dark me-2">목록</a>
+        <a href="/board/edit/1" class="btn btn-warning">수정</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

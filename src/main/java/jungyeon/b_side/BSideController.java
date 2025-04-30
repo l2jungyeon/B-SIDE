@@ -42,8 +42,26 @@ public class BSideController {
         return "signin";
     }
 
+    @GetMapping("/board")
+    public String board() {
+        return "board";
+    }
+
     @GetMapping("/mypage")
-    public String mypage() {
+    public String mypage(Model model) {
+        File folder = new File("src/main/resources/static/assets/img/performence");
+        List<String> images = Arrays.stream(folder.listFiles())
+                .filter(file -> !file.isDirectory())
+                .map(File::getName)
+                .collect(Collectors.toList());
+
+        List<List<String>> chunks = new ArrayList<>();
+
+        for (int i = 0; i < images.size(); i += 5) {
+            chunks.add(images.subList(i, Math.min(i + 5, images.size())));
+        }
+
+        model.addAttribute("imageChunks", chunks);
         return "mypage";
     }
 }
