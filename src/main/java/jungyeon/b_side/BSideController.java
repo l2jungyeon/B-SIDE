@@ -16,7 +16,7 @@ public class BSideController {
 
     @GetMapping("/")
     public String main(Model model) {
-        File folder = new File("src/main/resources/static/assets/img/performence");
+        File folder = new File("src/main/resources/static/assets/img/performance");
         List<String> images = Arrays.stream(folder.listFiles())
                 .filter(file -> !file.isDirectory())
                 .map(File::getName)
@@ -49,7 +49,7 @@ public class BSideController {
 
     @GetMapping("/mypage")
     public String mypage(Model model) {
-        File folder = new File("src/main/resources/static/assets/img/performence");
+        File folder = new File("src/main/resources/static/assets/img/performance");
         List<String> images = Arrays.stream(folder.listFiles())
                 .filter(file -> !file.isDirectory())
                 .map(File::getName)
@@ -64,4 +64,20 @@ public class BSideController {
         model.addAttribute("imageChunks", chunks);
         return "mypage";
     }
+
+    @GetMapping("/performance")
+    public String performance() {
+        return "performance-one";
+    }
+
+    @GetMapping("/performanceInfo")
+    public String performance_Info() {
+        return "performanceInfo";
+    }
+
+    @GetMapping("/artistInfo")
+    public String artistInfo() {
+        return "artistInfo";
+    }
+
 }
